@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de Control | Sistema de Gestión</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+ 
+  body { padding-top: 56px; background-color: #f4f6f9; }
+  #sidebar {
+    position: fixed;
+    top: 56px;
+    bottom: 0;
+    left: 0;
+    width: 240px;
+    overflow-y: auto;
+  }
+  main { margin-left: 0; }
+  @media (min-width: 992px) {
+    main { margin-left: 240px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <button class="btn btn-outline-light d-lg-none me-2" type="button"
+            data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
+      <i class="bi bi-list"></i>
+    </button>
+    <a class="navbar-brand fw-bold" href="#">
+      <i class="bi bi-hdd-network me-2"></i>SistemaAdmin
+    </a>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-bell text-white"></i>
+      <span class="navbar-text text-white-50">Nicolle Casilla</span>
+    </div>
+  </div>
+</nav>
+
+<div id="sidebar" class="d-none d-lg-block bg-dark text-white p-3">
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item"><a href="#" class="nav-link active text-white mb-1"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+    <li class="nav-item"><a href="#" class="nav-link text-white-50 mb-1"><i class="bi bi-people me-2"></i>Usuarios</a></li>
+    <li class="nav-item"><a href="#" class="nav-link text-white-50 mb-1"><i class="bi bi-file-earmark-text me-2"></i>Reportes</a></li>
+    <li class="nav-item"><a href="#" class="nav-link text-white-50 mb-1"><i class="bi bi-gear me-2"></i>Configuración</a></li>
+  </ul>
+</div>
+
+<div class="offcanvas offcanvas-start bg-dark text-white d-lg-none" tabindex="-1" id="sidebarOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title">Menú</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav nav-pills flex-column">
+      <li class="nav-item"><a href="#" class="nav-link active text-white mb-1"><i class="bi bi-speedometer2 me-2"></i>Dashboard</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white-50 mb-1"><i class="bi bi-people me-2"></i>Usuarios</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white-50 mb-1"><i class="bi bi-file-earmark-text me-2"></i>Reportes</a></li>
+      <li class="nav-item"><a href="#" class="nav-link text-white-50 mb-1"><i class="bi bi-gear me-2"></i>Configuración</a></li>
+    </ul>
+  </div>
+</div>
+
+<main class="p-4">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="mb-0">Panel de Control</h2>
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistro">
+      <i class="bi bi-plus-lg me-1"></i>Nuevo Registro
+    </button>
+  </div>
+
+  <div class="row g-3 mb-4">
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card text-white bg-primary shadow-sm h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div>
+              <p class="mb-1 opacity-75">Usuarios Activos</p>
+              <h3 class="mb-0">1,248</h3>
+            </div>
+            <i class="bi bi-people fs-1 opacity-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card text-white bg-danger shadow-sm h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div>
+              <p class="mb-1 opacity-75">Alertas de Seguridad</p>
+              <h3 class="mb-0">7</h3>
+            </div>
+            <i class="bi bi-shield-exclamation fs-1 opacity-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card text-white bg-warning shadow-sm h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div>
+              <p class="mb-1 opacity-75">Carga del Servidor</p>
+              <h3 class="mb-0">68%</h3>
+            </div>
+            <i class="bi bi-cpu fs-1 opacity-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card text-white bg-success shadow-sm h-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <div>
+              <p class="mb-1 opacity-75">Uptime</p>
+              <h3 class="mb-0">99.9%</h3>
+            </div>
+            <i class="bi bi-graph-up-arrow fs-1 opacity-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow-sm">
+    <div class="card-header bg-white fw-semibold">Últimos Eventos del Sistema</div>
+    <div class="table-responsive">
+      <table class="table table-hover mb-0 align-middle">
+        <thead class="table-light">
+          <tr>
+            <th>Fecha</th>
+            <th>Evento</th>
+            <th>Usuario</th>
+            <th>Prioridad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>14/09/2026 08:12</td>
+            <td>Intento de acceso fallido</td>
+            <td>desconocido</td>
+            <td><span class="badge bg-danger">Crítico</span></td>
+          </tr>
+          <tr>
+            <td>14/09/2026 07:45</td>
+            <td>Uso de CPU elevado</td>
+            <td>sistema</td>
+            <td><span class="badge bg-warning text-dark">Advertencia</span></td>
+          </tr>
+          <tr>
+            <td>13/09/2026 22:03</td>
+            <td>Copia de seguridad completada</td>
+            <td>sistema</td>
+            <td><span class="badge bg-success">Normal</span></td>
+          </tr>
+          <tr>
+            <td>13/09/2026 19:30</td>
+            <td>Nuevo usuario registrado</td>
+            <td>ncastilla</td>
+            <td><span class="badge bg-success">Normal</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
+
+<div class="modal fade" id="modalRegistro" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Nuevo Registro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="nombreEvento" class="form-label">Nombre del evento</label>
+            <input type="text" class="form-control" id="nombreEvento" placeholder="Ej. Mantenimiento programado">
+          </div>
+          <div class="mb-3">
+            <label for="prioridadEvento" class="form-label">Prioridad</label>
+            <select class="form-select" id="prioridadEvento">
+              <option value="normal">Normal</option>
+              <option value="advertencia">Advertencia</option>
+              <option value="critico">Crítico</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="descripcionEvento" class="form-label">Descripción</label>
+            <textarea class="form-control" id="descripcionEvento" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Guardar Registro</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
