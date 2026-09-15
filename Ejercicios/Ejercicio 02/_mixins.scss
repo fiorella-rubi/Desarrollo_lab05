@@ -1,0 +1,15 @@
+@import "funciones";
+
+@mixin tema-componente($color-fondo) {
+  background-color: $color-fondo;
+
+   @if lightness($color-fondo) < 60% {
+    color: white;
+  } @else {
+    color: #212121;
+  }
+
+  padding: px-a-rem(12) px-a-rem(20);
+  border: none;
+  border-radius: px-a-rem(6);
+}

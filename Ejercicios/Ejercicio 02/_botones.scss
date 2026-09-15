@@ -1,0 +1,15 @@
+@import "variables";
+@import "mixins";
+
+@each $nombre-color, $codigo-hex in $tema-colores {
+  .btn-#{$nombre-color} {
+    @include tema-componente($codigo-hex);
+    font-family: $fuente-base;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: darken($codigo-hex, 10%);
+    }
+  }
+}

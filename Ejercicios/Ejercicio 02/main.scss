@@ -1,0 +1,22 @@
+@import "variables";
+@import "funciones";
+@import "mixins";
+@import "grilla";
+@import "botones";
+
+body {
+  font-family: $fuente-base;
+  font-size: px-a-rem(16);
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: px-a-rem(32);
+}
+
+h1 {
+  font-size: px-a-rem(28);
+}
+
+.tarjeta-demo {
+  @include tema-componente(map-get($tema-colores, "secundario"));
+  margin-bottom: px-a-rem(16);
+}

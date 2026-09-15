@@ -1,0 +1,6 @@
+@use "sass:math";
+@import "variables";
+
+@function px-a-rem($pixeles) {
+  @return math.div($pixeles, $tamanio-base) * 1rem;
+}

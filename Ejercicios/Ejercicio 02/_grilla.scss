@@ -1,0 +1,15 @@
+@use "sass:math";
+@import "funciones";
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  gap: px-a-rem(16);
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 math.div($i, 12) * 100%;
+    max-width: math.div($i, 12) * 100%;
+  }
+}
